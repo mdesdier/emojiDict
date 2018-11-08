@@ -10,6 +10,8 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
 
+    
+    var emojis = ["😀", "🎃", "👍", "🦑", "🌊"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +30,7 @@ class EmojiTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
-        return 10
+        return emojis.count
     }
 
     
@@ -36,8 +38,7 @@ class EmojiTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "Hello World"
-        
+        cell.textLabel?.text = emojis[indexPath.row]
         return cell
     }
  
