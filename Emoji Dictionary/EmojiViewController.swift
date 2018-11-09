@@ -12,14 +12,19 @@ class EmojiViewController: UIViewController {
 
     //linked from label on view controller
     @IBOutlet weak var bigEmoji: UILabel!
+    @IBOutlet weak var bigEmojiDescription: UILabel!
     var passedEmoji = ""
-    
+    var descriptionDict:[String:String] = ["😀":"Smiley face", "🎃":"The Pumpkin", "👍":"Thumbs up", "🦑":"The Squid", "🌊":"The Wave", "📷":"The Camera", "📺":"The TV"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // set big emoji to the pased one
         bigEmoji.text = passedEmoji
+        
+        //set description based on passed emoji
+        bigEmojiDescription.text = descriptionDict[passedEmoji]
+        
         
     }
     
