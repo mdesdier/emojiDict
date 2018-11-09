@@ -41,10 +41,25 @@ class EmojiTableViewController: UITableViewController {
         return cell
     }
  
+    
+    
+    // use mySegue1 to go to the next view Controller
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let emojiToPass = emojis[indexPath.row]
         
-        performSegue(withIdentifier: "mySegue1", sender: nil)
+        //sender passes data to prepare function.  changed nil to "mystufftopass"
+        performSegue(withIdentifier: "mySegue1", sender: emojiToPass)
     }
+    
+    
+    //called before we jump to the next view controller.  set up data passing here.
+    // sender passes data between prepare for segue and performSegue.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let emojiVC = segue.destination as! EmojiViewController
+        emojiVC.passedEmoji = sender as! String
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
