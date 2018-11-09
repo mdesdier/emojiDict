@@ -11,7 +11,7 @@ import UIKit
 class EmojiTableViewController: UITableViewController {
 
     
-    var emojis = ["😀", "🎃", "👍", "🦑", "🌊"]
+    var emojis = ["😀", "🎃", "👍", "🦑", "🌊", "📷", "📺"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +27,6 @@ class EmojiTableViewController: UITableViewController {
    //     // #warning Incomplete implementation, return the number of sections
    //     return 0
    // }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
         return emojis.count
@@ -42,7 +41,10 @@ class EmojiTableViewController: UITableViewController {
         return cell
     }
  
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "mySegue1", sender: nil)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
