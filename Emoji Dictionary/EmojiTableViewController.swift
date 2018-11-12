@@ -11,9 +11,13 @@ import UIKit
 class EmojiTableViewController: UITableViewController {
 
     
-    var emojis = ["😀", "🎃", "👍", "🦑", "🌊", "📷", "📺"]
+    //var emojis = ["😀", "🎃", "👍", "🦑", "🌊", "📷", "📺"]
+    var emojis : [Emoji] = [] //array of Emoji objects (init to empty)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emojis = createEmojis()  //create array of Emoji objects
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,7 +41,9 @@ class EmojiTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = emojis[indexPath.row]
+        //cell.textLabel?.text = emojis[indexPath.row]
+        cell.textLabel?.text = emojis[indexPath.row].theEmoji   //now reference label in the object
+        
         return cell
     }
  
@@ -59,7 +65,35 @@ class EmojiTableViewController: UITableViewController {
         emojiVC.passedEmoji = sender as! String
     }
     
-    
+    // create array of emoji objects and return it
+    func createEmojis() -> [Emoji] {
+        let smiley = Emoji()
+        smiley.theEmoji = "😀"
+        smiley.releaseDate = 2009
+        smiley.category = "Faces"
+        smiley.descr = "A smiley face"
+        
+        let squid = Emoji()
+        squid.theEmoji = "🦑"
+        squid.releaseDate = 2017
+        squid.category = "Animals"
+        squid.descr = "A cool squid"
+        
+        let tv = Emoji()
+        tv.theEmoji = "📺"
+        tv.releaseDate = 2011
+        tv.category = "Objects"
+        tv.descr = "The old TV"
+        
+        let wave = Emoji()
+        wave.theEmoji = "🌊"
+        wave.releaseDate = 2012
+        wave.category = "Nature"
+        wave.descr = "The wave in Japan"
+        
+        
+        return [smiley, squid, tv, wave]   //return array of emoji objects
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

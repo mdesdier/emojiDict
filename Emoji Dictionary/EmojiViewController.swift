@@ -28,7 +28,7 @@ class EmojiViewController: UIViewController {
         
     }
     
-
+  
     /*
     // MARK: - Navigation
 
