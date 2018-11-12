@@ -13,17 +13,24 @@ class EmojiViewController: UIViewController {
     //linked from label on view controller
     @IBOutlet weak var bigEmoji: UILabel!
     @IBOutlet weak var bigEmojiDescription: UILabel!
-    var passedEmoji = ""
-    var descriptionDict:[String:String] = ["😀":"Smiley face", "🎃":"The Pumpkin", "👍":"Thumbs up", "🦑":"The Squid", "🌊":"The Wave", "📷":"The Camera", "📺":"The TV"]
+    @IBOutlet weak var bigEmojiCategory: UILabel!
+    @IBOutlet weak var bigEmojiReleaseYear: UILabel!
+    
+    var passedEmoji = Emoji()  //will be passed an emoji object, not a string
+    
+   // var descriptionDict:[String:String] = ["😀":"Smiley face", "🎃":"The Pumpkin", "👍":"Thumbs up", "🦑":"The Squid", "🌊":"The Wave", "📷":"The Camera", "📺":"The TV"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // set big emoji to the pased one
-        bigEmoji.text = passedEmoji
+        bigEmoji.text = passedEmoji.theEmoji
         
-        //set description based on passed emoji
-        bigEmojiDescription.text = descriptionDict[passedEmoji]
+        //set description based on passed emoji (no longer need dictionary)
+        bigEmojiDescription.text = passedEmoji.descr
+        
+        bigEmojiReleaseYear.text = "Released: \(passedEmoji.releaseDate)"
+        bigEmojiCategory.text = "Category: \(passedEmoji.category)"
         
         
     }

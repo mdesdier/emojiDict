@@ -62,7 +62,9 @@ class EmojiTableViewController: UITableViewController {
     // sender passes data between prepare for segue and performSegue.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let emojiVC = segue.destination as! EmojiViewController
-        emojiVC.passedEmoji = sender as! String
+ 
+        //passedEmoji is object in the other view controller and here we can fill it in.
+        emojiVC.passedEmoji = sender as! Emoji   //was string but now is Emoji object
     }
     
     // create array of emoji objects and return it

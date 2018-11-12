@@ -63,20 +63,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apg-mW-uK3">
+                                <rect key="frame" x="147.5" y="564" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Year:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvb-fB-yDT">
+                                <rect key="frame" x="136" y="600" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="apg-mW-uK3" firstAttribute="centerX" secondItem="1ux-nl-B9R" secondAttribute="centerX" id="3nN-6Q-W5t"/>
                             <constraint firstItem="0Rq-rJ-6V4" firstAttribute="leading" secondItem="TPb-sW-g9G" secondAttribute="leading" constant="20" id="EPs-H0-gdB"/>
                             <constraint firstItem="pbc-DG-ghm" firstAttribute="top" secondItem="TPb-sW-g9G" secondAttribute="top" constant="50" id="Hxe-eK-TH4"/>
                             <constraint firstItem="TPb-sW-g9G" firstAttribute="trailing" secondItem="0Rq-rJ-6V4" secondAttribute="trailing" constant="20" id="Vjh-9N-5UK"/>
+                            <constraint firstItem="hvb-fB-yDT" firstAttribute="centerX" secondItem="1ux-nl-B9R" secondAttribute="centerX" id="aAO-CM-tSL"/>
                             <constraint firstItem="TPb-sW-g9G" firstAttribute="bottom" secondItem="0Rq-rJ-6V4" secondAttribute="bottom" constant="10" id="dsP-wf-R5X"/>
+                            <constraint firstItem="hvb-fB-yDT" firstAttribute="top" secondItem="apg-mW-uK3" secondAttribute="bottom" constant="15" id="fR4-Xh-Iyg"/>
                             <constraint firstItem="pbc-DG-ghm" firstAttribute="centerX" secondItem="1ux-nl-B9R" secondAttribute="centerX" id="uOL-rs-sM1"/>
+                            <constraint firstItem="0Rq-rJ-6V4" firstAttribute="top" secondItem="hvb-fB-yDT" secondAttribute="bottom" constant="15" id="wdG-ck-whv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TPb-sW-g9G"/>
                     </view>
                     <connections>
                         <outlet property="bigEmoji" destination="pbc-DG-ghm" id="LR4-Hk-E3g"/>
+                        <outlet property="bigEmojiCategory" destination="apg-mW-uK3" id="W72-wD-teE"/>
                         <outlet property="bigEmojiDescription" destination="0Rq-rJ-6V4" id="Fb7-fL-BLS"/>
+                        <outlet property="bigEmojiReleaseYear" destination="hvb-fB-yDT" id="ILV-8R-vW4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bs8-Sf-Z98" userLabel="First Responder" sceneMemberID="firstResponder"/>
